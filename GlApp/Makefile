@@ -25,7 +25,7 @@ ifeq ($(config),debug)
   TARGET = $(TARGETDIR)/GlApp.exe
   OBJDIR = ../bin-int/Debug-windows-x86_64/GlApp
   DEFINES +=
-  INCLUDES += -Isrc -Ivendor/GLFW/include -Ivendor/Glad/include
+  INCLUDES += -Isrc -Ivendor/GLFW/include -Ivendor/Glm/include -Ivendor/Glad/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64
@@ -61,7 +61,7 @@ ifeq ($(config),release)
   TARGET = $(TARGETDIR)/GlApp.exe
   OBJDIR = ../bin-int/Release-windows-x86_64/GlApp
   DEFINES +=
-  INCLUDES += -Isrc -Ivendor/GLFW/include -Ivendor/Glad/include
+  INCLUDES += -Isrc -Ivendor/GLFW/include -Ivendor/Glm/include -Ivendor/Glad/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64
@@ -97,7 +97,7 @@ ifeq ($(config),dist)
   TARGET = $(TARGETDIR)/GlApp.exe
   OBJDIR = ../bin-int/Dist-windows-x86_64/GlApp
   DEFINES +=
-  INCLUDES += -Isrc -Ivendor/GLFW/include -Ivendor/Glad/include
+  INCLUDES += -Isrc -Ivendor/GLFW/include -Ivendor/Glm/include -Ivendor/Glad/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64
@@ -120,6 +120,7 @@ endif
 
 OBJECTS := \
 	$(OBJDIR)/App.o \
+	$(OBJDIR)/Shader.o \
 
 RESOURCES := \
 
@@ -179,6 +180,9 @@ $(OBJECTS): | $(OBJDIR)
 endif
 
 $(OBJDIR)/App.o: src/App.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Shader.o: src/Renderer/Shader.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

@@ -332,7 +332,14 @@
  C:/MinGW-64/include/c++/14.2.0/bits/basic_ios.tcc \
  C:/MinGW-64/include/c++/14.2.0/bits/ostream.tcc \
  C:/MinGW-64/include/c++/14.2.0/istream \
- C:/MinGW-64/include/c++/14.2.0/bits/istream.tcc
+ C:/MinGW-64/include/c++/14.2.0/bits/istream.tcc src/Renderer/Shader.h \
+ vendor/Glad/include/Glad/glad.h C:/MinGW-64/include/c++/14.2.0/fstream \
+ C:/MinGW-64/include/c++/14.2.0/bits/codecvt.h \
+ C:/MinGW-64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/MinGW-64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/MinGW-64/include/c++/14.2.0/bits/fstream.tcc \
+ C:/MinGW-64/include/c++/14.2.0/sstream \
+ C:/MinGW-64/include/c++/14.2.0/bits/sstream.tcc
 vendor/Glad/include/glad/glad.h:
 C:/MinGW-64/x86_64-w64-mingw32/include/windows.h:
 C:/MinGW-64/x86_64-w64-mingw32/include/_mingw.h:
@@ -669,3 +676,12 @@ C:/MinGW-64/include/c++/14.2.0/bits/basic_ios.tcc:
 C:/MinGW-64/include/c++/14.2.0/bits/ostream.tcc:
 C:/MinGW-64/include/c++/14.2.0/istream:
 C:/MinGW-64/include/c++/14.2.0/bits/istream.tcc:
+src/Renderer/Shader.h:
+vendor/Glad/include/Glad/glad.h:
+C:/MinGW-64/include/c++/14.2.0/fstream:
+C:/MinGW-64/include/c++/14.2.0/bits/codecvt.h:
+C:/MinGW-64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h:
+C:/MinGW-64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h:
+C:/MinGW-64/include/c++/14.2.0/bits/fstream.tcc:
+C:/MinGW-64/include/c++/14.2.0/sstream:
+C:/MinGW-64/include/c++/14.2.0/bits/sstream.tcc:

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp"
+    },
+    "cmake.sourceDirectory": "C:/dev/OpenGL/GlApp/vendor/GLFW"
+}

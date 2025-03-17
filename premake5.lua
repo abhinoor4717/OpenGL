@@ -13,6 +13,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "GlApp/vendor/GLFW/include"
+IncludeDir["Glm"] = "GlApp/vendor/Glm/include"
 IncludeDir["Glad"] = "GlApp/vendor/Glad/include"
 
 include "GlApp/vendor/GLFW"
@@ -35,6 +36,7 @@ project "GlApp"
     includedirs {
         "%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glm}",
 		"%{IncludeDir.Glad}"
     }
 
