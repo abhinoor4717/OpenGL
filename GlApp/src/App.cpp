@@ -2,7 +2,10 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include <filesystem>
 #include "Renderer/Shader.h"
+#include "Renderer/Camera.h"
+#include "Renderer/Renderer.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -11,10 +14,11 @@ void processInput(GLFWwindow *window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-std::string vPath = "../../../GlApp/src/Shaders/VertexShader.glsl";
-std::string fPath = "../../../GlApp/src/Shaders/FragmentShader.glsl";
+std::string vPath = "src/Shaders/VertexShader.glsl";
+std::string fPath = "src/Shaders/FragmentShader.glsl";
 
 Shader* shader;
+Camera camera(0, 0, SCR_WIDTH, SCR_HEIGHT);
 
 int main(int argc, char* argv[])
 {
@@ -76,7 +80,6 @@ int main(int argc, char* argv[])
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     glBindVertexArray(0); 
 
-
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -95,8 +98,10 @@ int main(int argc, char* argv[])
 
         // draw our first triangle
         shader->Use();
-        glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
-        glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices)/(sizeof(float)));
+        //glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+        //glDrawArrays(GL_LINES, 0, sizeof(vertices)/(sizeof(float)));
+        Renderer::DrawLine(camera, 100, 100, 500, 100);
+        //glDrawArrays()
         // glBindVertexArray(0); // no need to unbind it every time 
  
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)

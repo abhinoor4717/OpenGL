@@ -1,6 +1,8 @@
 #pragma once
 
-#include "glm.hpp"
+#include "glm/glm.hpp"
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 class Camera {
 public:
@@ -10,6 +12,9 @@ public:
 
     inline int GetX() { return m_X; }
     inline int GetY() { return m_Y; }
+
+    inline void SetX(int x) { m_X = x; }
+    inline void SetY(int y) { m_Y = y; }
 
     glm::vec2 TranslatePos(float x, float y);
 
